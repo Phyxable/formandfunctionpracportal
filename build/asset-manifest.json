@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/static/css/main.9df09305.chunk.css",
+    "main.js": "/static/js/main.43e932ef.chunk.js",
+    "main.js.map": "/static/js/main.43e932ef.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.cf4ed8b3.js",
+    "runtime-main.js.map": "/static/js/runtime-main.cf4ed8b3.js.map",
+    "static/js/2.be0ccb43.chunk.js": "/static/js/2.be0ccb43.chunk.js",
+    "static/js/2.be0ccb43.chunk.js.map": "/static/js/2.be0ccb43.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.9c1a18fc6326d0258b38fa45e8568d6a.js": "/precache-manifest.9c1a18fc6326d0258b38fa45e8568d6a.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.9df09305.chunk.css.map": "/static/css/main.9df09305.chunk.css.map",
+    "static/js/2.be0ccb43.chunk.js.LICENSE.txt": "/static/js/2.be0ccb43.chunk.js.LICENSE.txt",
+    "static/media/add-button.svg": "/static/media/add-button.a2cdf84a.svg",
+    "static/media/arrow_back.svg": "/static/media/arrow_back.e4c704fc.svg",
+    "static/media/App.css": "/static/media/background.c0667cfe.svg",
+    "static/media/black_xbutton.svg": "/static/media/black_xbutton.b3643a5d.svg",
+    "static/media/check-button.svg": "/static/media/check-button.d8b3bd27.svg",
+    "static/media/close-button.png": "/static/media/close-button.12530d92.png",
+    "static/media/empty-state.svg": "/static/media/empty-state.4c969a48.svg",
+    "static/media/logo_webbanner.png": "/static/media/logo_webbanner.1f2ecda3.png",
+    "static/media/vas_complete.svg": "/static/media/vas_complete.a6d69e8c.svg",
+    "static/media/vas_jumping.gif": "/static/media/vas_jumping.66d7ce62.gif"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.cf4ed8b3.js",
+    "static/js/2.be0ccb43.chunk.js",
+    "static/css/main.9df09305.chunk.css",
+    "static/js/main.43e932ef.chunk.js"
+  ]
+}

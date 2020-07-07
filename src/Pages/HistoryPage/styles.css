@@ -1,0 +1,16 @@
+.history-card{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 24px;
+    background-color: #fff;
+    padding: 16px;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.18);
+    cursor: pointer;
+}
+
+@media (min-width: 960px) {
+    .history-card{
+        width: 50%;
+    }
+}

@@ -1,0 +1,42 @@
+{
+  "name": "react-express-starter",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-http-proxy": "^1.6.0",
+    "express-pino-logger": "^4.0.0",
+    "firebase": "^7.14.2",
+    "protobufjs": "^6.9.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "server": "node-env-run server --exec nodemon | pino-colada",
+    "server:prod": "node server",
+    "dev": "run-p server start"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "engines": {
+    "node": "12.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^5.1.0",
+    "node-env-run": "^3.0.2",
+    "nodemon": "^2.0.2",
+    "npm-run-all": "^4.1.5",
+    "pino-colada": "^1.5.1"
+  }
+}
