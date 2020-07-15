@@ -14,14 +14,14 @@ app.use(express.static(path.join(__dirname, "..", "build")));
 app.use(cors())
 
 var config = {
-    apiKey: "AIzaSyAbL73CA9y6_8iH-HKtonUh6n6zWe0x51Q",
-    authDomain: "expressserver-407d1.firebaseapp.com",
-    databaseURL: "https://expressserver-407d1.firebaseio.com",
-    projectId: "expressserver-407d1",
-    storageBucket: "expressserver-407d1.appspot.com",
-    messagingSenderId: "258772565589",
-    appId: "1:258772565589:web:819af8af0f2c2d915c9edc",
-    measurementId: "G-RW8HGBGVH7"
+  apiKey: "AIzaSyAuk6TOTlENtSXDtAMh4JjN20GNeiEDP-c",
+  authDomain: "practitionerprograms.firebaseapp.com",
+  databaseURL: "https://practitionerprograms.firebaseio.com",
+  projectId: "practitionerprograms",
+  storageBucket: "practitionerprograms.appspot.com",
+  messagingSenderId: "857963115716",
+  appId: "1:857963115716:web:618e888850c76184d6c591",
+  measurementId: "G-2260SHPVVH"
 };
 firebase.initializeApp(config);
 
