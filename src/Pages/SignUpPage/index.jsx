@@ -64,7 +64,6 @@ class SignUpFormBase extends Component {
   onSubmit = (event) => {
     const { username, lastname, email, passwordOne } = this.state;
 
-    if (array_email.includes(email.toLowerCase())) {
       this.props.firebase
         .doCreateUserWithEmailAndPassword(email, passwordOne)
         .then((authUser) => {
@@ -108,9 +107,6 @@ class SignUpFormBase extends Component {
         });
 
       event.preventDefault();
-    } else {
-      alert("not authenticated");
-    }
   };
 
   onChange = (event) => {

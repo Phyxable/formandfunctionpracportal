@@ -61,7 +61,6 @@ class SignInFormBase extends Component {
     console.log("sign in button pressed");
     console.log(this.props);
     const { email, password } = this.state;
-    if (array_email.includes(email.toLowerCase())) {
       this.props.firebase
         .doSignInWithEmailAndPassword(email, password)
         .then(() => {
@@ -72,9 +71,6 @@ class SignInFormBase extends Component {
           this.setState({ error });
         });
       event.preventDefault();
-    } else {
-      alert("not authenticated");
-    }
   };
 
   onChange = (event) => {
