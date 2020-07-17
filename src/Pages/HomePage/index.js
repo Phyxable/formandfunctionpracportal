@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 import { withAuthorization } from "../../Components/Auth/Session";
-import './App.css';
-import { Redirect, Link } from 'react-router-dom';
-import HomePageNavBar from './HomePageNavBar';
-import SearchBar from './SearchBar';
+import "./App.css";
+import { Redirect, Link } from "react-router-dom";
+import HomePageNavBar from "./HomePageNavBar";
+import SearchBar from "./SearchBar";
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -12,7 +12,7 @@ class HomePage extends React.Component {
       selected_users: [],
       filterDisplay: [],
       loading: true,
-      showingList: false
+      showingList: false,
     };
     setTimeout(() => {
       this.setState({ loading: false });
@@ -20,43 +20,55 @@ class HomePage extends React.Component {
   }
 
   handleUserData = (selected_users, filterDisplay) => {
-    this.setState({ 
+    this.setState({
       selected_users: selected_users,
       filterDisplay: filterDisplay,
-      showingList: true
+      showingList: true,
     });
-  }
+  };
 
   render() {
-    if(this.state.showingList && this.state.selected_users != []){
+    if (this.state.showingList && this.state.selected_users.length !== 0) {
       return (
         <Redirect
           to={{
-            pathname: "/exercise",
+            pathname: "/custom-phyx",
             state: {
-              selected_users: this.state.selected_users !== null ? this.state.selected_users : null, 
-              uid: this.props.uid.uid
-            }
+              selected_users:
+                this.state.selected_users !== null
+                  ? this.state.selected_users
+                  : null,
+              uid: this.props.uid.uid,
+            },
           }}
           push
         />
       );
+    } else if(this.state.showingList && this.state.selected_users.length === 0) {
+      window.alert('Add or select clients');
     }
 
-    return( 
-    <div>
+    return (
+      <div>
         <HomePageNavBar />
         <div className="ui top attached tabular menu">
-        <div className="active item">Home</div>
-        <Link to='/history'><div className="item">History</div></Link>
-        <Link to='/profile'><div className="item">Profile</div></Link>
+          <div className="active item">Home</div>
+          <Link to="/history">
+            <div className="item">History</div>
+          </Link>
+          <Link to="/profile">
+            <div className="item">Profile</div>
+          </Link>
         </div>
-          <div className="container margin-top-32">
-                <SearchBar handleUserData={this.handleUserData} users={this.props.users}/>
-          </div>
-    </div>
-  );
+        <div className="container margin-top-32">
+          <SearchBar
+            handleUserData={this.handleUserData}
+            users={this.props.users}
+          />
+        </div>
+      </div>
+    );
+  }
 }
-}
-const condition = authUser => !!authUser;
+const condition = (authUser) => !!authUser;
 export default withAuthorization(condition)(HomePage);

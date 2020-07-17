@@ -1,13 +1,18 @@
 import React, { Component } from "react";
-import { Link, withRouter } from 'react-router-dom';
-import { withFirebase, firebase,  FirebaseContext, db } from '../../Firebase/firebase';
+import { Link, withRouter } from "react-router-dom";
+import {
+  withFirebase,
+  firebase,
+  FirebaseContext,
+  db,
+} from "../../Firebase/firebase";
 import * as ROUTES from "../../../Constants/routes";
-import { compose } from 'recompose';
+import { compose } from "recompose";
 
 const SignUpPage = () => (
   <div>
     <h1>SignUp</h1>
-    <SignUpForm/>
+    <SignUpForm />
   </div>
 );
 
@@ -16,7 +21,7 @@ const INITIAL_STATE = {
   email: "",
   passwordOne: "",
   passwordTwo: "",
-  error: null
+  error: null,
 };
 class SignUpFormBase extends Component {
   constructor(props) {
@@ -24,52 +29,46 @@ class SignUpFormBase extends Component {
     this.state = { ...INITIAL_STATE };
   }
 
-  onSubmit = event => {
+  onSubmit = (event) => {
     const { username, email, passwordOne } = this.state;
     this.props.firebase
       .doCreateUserWithEmailAndPassword(email, passwordOne)
-      .then(authUser => {
-       console.log("old sign up")
-        return this.props.firebase
-          .user(authUser.uid)
-          .update({
-            username,
-            email,
-            joinDate: new Date().toLocaleDateString("en-US"),
-            accountType:'USER',
-            userProfile:{paid:false, phyxes:{posture:{currentVideo:'video2'}}}
-          });
+      .then((authUser) => {
+        console.log("old sign up");
+        return this.props.firebase.user(authUser.uid).update({
+          username,
+          email,
+          joinDate: new Date().toLocaleDateString("en-US"),
+          accountType: "USER",
+          userProfile: {
+            paid: false,
+            phyxes: { posture: { currentVideo: "video2" } },
+          },
+        });
       })
-      .then(authUser => {
-        
+      .then((authUser) => {
         this.setState({ ...INITIAL_STATE });
         this.props.history.push(ROUTES.HOME);
       })
-      .catch(error => {
+      .catch((error) => {
         this.setState({ error });
       });
 
     event.preventDefault();
   };
 
-  onChange = event => {
+  onChange = (event) => {
     this.setState({ [event.target.name]: event.target.value });
   };
 
   render() {
-    const {
-        username,
-        email,
-        passwordOne,
-        passwordTwo,
-        error,
-      } = this.state;
+    const { username, email, passwordOne, passwordTwo, error } = this.state;
 
-      const isInvalid =
+    const isInvalid =
       passwordOne !== passwordTwo ||
-      passwordOne === '' ||
-      email === '' ||
-      username === '';
+      passwordOne === "" ||
+      email === "" ||
+      username === "";
 
     return (
       <form onSubmit={this.onSubmit}>
@@ -101,7 +100,9 @@ class SignUpFormBase extends Component {
           type="password"
           placeholder="Confirm Password"
         />
- <button disabled={isInvalid} type="submit">Sign Up</button>
+        <button disabled={isInvalid} type="submit">
+          Sign Up
+        </button>
 
         {error && <p>{error.message}</p>}
       </form>
@@ -114,10 +115,7 @@ const SignUpLink = () => (
     Don't have an account? <Link to="/signup">Sign Up</Link>
   </p>
 );
-const SignUpForm = compose(
-    withRouter,
-    withFirebase,
-  )(SignUpFormBase)
+const SignUpForm = compose(withRouter, withFirebase)(SignUpFormBase);
 export default SignUpPage;
 
 export { SignUpForm, SignUpLink };

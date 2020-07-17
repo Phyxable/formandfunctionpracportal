@@ -14,14 +14,14 @@ app.use(express.static(path.join(__dirname, "..", "build")));
 app.use(cors())
 
 var config = {
-  apiKey: "AIzaSyAuk6TOTlENtSXDtAMh4JjN20GNeiEDP-c",
-  authDomain: "practitionerprograms.firebaseapp.com",
-  databaseURL: "https://practitionerprograms.firebaseio.com",
-  projectId: "practitionerprograms",
-  storageBucket: "practitionerprograms.appspot.com",
-  messagingSenderId: "857963115716",
-  appId: "1:857963115716:web:618e888850c76184d6c591",
-  measurementId: "G-2260SHPVVH"
+  apiKey: "AIzaSyDrRlySGdplNDvKfsNzowzXRSnWZaslIbg",
+    authDomain: "formandfunctionpractitioner.firebaseapp.com",
+    databaseURL: "https://formandfunctionpractitioner.firebaseio.com",
+    projectId: "formandfunctionpractitioner",
+    storageBucket: "formandfunctionpractitioner.appspot.com",
+    messagingSenderId: "347765201904",
+    appId: "1:347765201904:web:ead4d2d7875b33c3bd1b35",
+    measurementId: "G-XBJZ20Y2JB"
 };
 firebase.initializeApp(config);
 

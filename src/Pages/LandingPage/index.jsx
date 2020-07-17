@@ -10,7 +10,7 @@ class Landing extends Component {
   }
 
   componentDidMount() {
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
   }
 
   componentDidUpdate() {
@@ -20,47 +20,40 @@ class Landing extends Component {
   }
 
   render() {
-
     return (
-
       <div className="flex-column center">
-        
         <HomePageNavBar />
 
         <div className="flex-1">
-        <div className="center">
-            <img
-              className="d4-v1"
-              src={empty_state}
-            />
+          <div className="center">
+            <img className="d4-v1" src={empty_state} />
           </div>
         </div>
 
-    
-
-      <div className="landing-bottom-nav-bar">
-        <div className="flex-1">
-          <div>
-            <Link
-              to="/signup"
-              style={{ textDecoration: "none", color: "white" }}
-            >
-              <button className="margin-top-16 button"
-                onClick={e => {
-                  e.stopPropagation();
-                  this.getStarted();
-                }}
+        <div className="landing-bottom-nav-bar">
+          <div className="flex-1">
+            <div>
+              <Link
+                to="/signup"
+                style={{ textDecoration: "none", color: "white" }}
               >
-                GET STARTED
-              </button>
-            </Link>
+                <button
+                  className="margin-top-16 button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    this.getStarted();
+                  }}
+                >
+                  GET STARTED
+                </button>
+              </Link>
+            </div>
+            <div className="flex-1 margin-top-16 futura-14-300">
+              <p className="center">
+                Already have an account? <Link to="/signin">Login</Link>
+              </p>
+            </div>
           </div>
-          <div className="flex-1 margin-top-16 futura-14-300">
-            <p className="center">
-            Already have an account? <Link to="/signin">Login</Link>
-            </p>
-          </div>
-        </div>
         </div>
       </div>
     );

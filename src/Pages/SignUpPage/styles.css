@@ -1,18 +1,18 @@
-.sign-up-background-image{
-    position:absolute;
-    z-index: -2;
-    width:440px;
-    left:100px;
-    top:60px;
+.sign-up-background-image {
+  position: absolute;
+  z-index: -2;
+  width: 440px;
+  left: 100px;
+  top: 60px;
 }
 
-.arrow-left{
-width:32px;
-margin-left:10vw;
-margin-top:32px;
+.arrow-left {
+  width: 32px;
+  margin-left: 10vw;
+  margin-top: 32px;
 }
 
-#noHover:hover{
-    color: white;
-    border: none;
+#noHover:hover {
+  color: white;
+  border: none;
 }

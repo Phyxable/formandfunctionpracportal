@@ -2,22 +2,25 @@ import React from "react";
 import AuthUserContext from "./context";
 import { withFirebase } from "../../Firebase/firebase";
 
-const withAuthentication = Component => {
+const withAuthentication = (Component) => {
   class WithAuthentication extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
         authUser: null,
       };
-   
     }
 
     componentDidMount() {
-      this.listener = this.props.firebase.auth.onAuthStateChanged(authUser => {
-        authUser
-          ? this.setState({ authUser }, ()=>{this.addUserProfileToAuthUser()})
-          : this.setState({ authUser: null });
-      });
+      this.listener = this.props.firebase.auth.onAuthStateChanged(
+        (authUser) => {
+          authUser
+            ? this.setState({ authUser }, () => {
+                this.addUserProfileToAuthUser();
+              })
+            : this.setState({ authUser: null });
+        }
+      );
     }
 
     componentWillUnmount() {
@@ -25,7 +28,6 @@ const withAuthentication = Component => {
     }
 
     async addUserProfileToAuthUser() {
-
       const userProfile = await this.props.firebase.doGetUserProfile(
         this.state.authUser.uid
       );
@@ -33,7 +35,7 @@ const withAuthentication = Component => {
       oldAuth.userProfile = { userProfile: userProfile };
       this.setState({ authUser: oldAuth });
     }
-  
+
     render() {
       return (
         <AuthUserContext.Provider value={this.state.authUser}>
