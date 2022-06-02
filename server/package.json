@@ -9,7 +9,7 @@
     "express-http-proxy": "^1.6.0",
     "express-pino-logger": "^4.0.0",
     "firebase": "^7.14.2",
-    "protobufjs": "^6.9.0"
+    "protobufjs": "^6.11.3"
   },
   "scripts": {
     "start": "react-scripts start",
